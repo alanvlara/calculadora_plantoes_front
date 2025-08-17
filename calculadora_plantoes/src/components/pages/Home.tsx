@@ -22,7 +22,7 @@ function Home() {
 
       {/* Botões de navegação */}
       <div className="flex space-x-4">
-        <a href="/plantoes" className="px-6 py-3 bg-pink-500 text-white font-semibold rounded-lg shadow hover:bg-pink-600 transition">
+        <a href="/historico-plantoes" className="px-6 py-3 bg-pink-500 text-white font-semibold rounded-lg shadow hover:bg-pink-600 transition">
           Ver Plantões
         </a>
         <a href="/perfil" className="px-6 py-3 bg-pink-200 text-pink-800 font-semibold rounded-lg shadow hover:bg-pink-300 transition">
