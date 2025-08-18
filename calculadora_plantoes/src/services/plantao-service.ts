@@ -5,6 +5,10 @@ export type Plantao = {
   hora_inicio: string;
   hora_fim: string;
   custo_total: number | string;
+  horas_item_1: number | string;
+  horas_item_2: number | string;
+  horas_item_3: number | string;
+  horas_item_4: number | string;
 };
 
 export type PlantoesResponse = {

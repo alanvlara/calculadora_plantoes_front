@@ -109,21 +109,61 @@ function HistoricoPlantoes() {
             )}
         </div>
 
+        <div className="flex items-center gap-6 mb-4">
+            {/* Valor total */}
+            {plantoesFiltrados.length > 0 && (
+                <div className="text-lg font-bold text-pink-700">
+                    Total Horas Item 1: {plantoesFiltrados
+                    .reduce((acc, p) => acc + Number(p.horas_item_1), 0)
+                    .toFixed(2)}
+                </div>
+            )}
+
+            {/* Valor total */}
+            {plantoesFiltrados.length > 0 && (
+                <div className="text-lg font-bold text-pink-700">
+                    Total Horas Item 2: {plantoesFiltrados
+                    .reduce((acc, p) => acc + Number(p.horas_item_2), 0)
+                    .toFixed(2)}
+                </div>
+            )}
+
+            {/* Valor total */}
+            {plantoesFiltrados.length > 0 && (
+                <div className="text-lg font-bold text-pink-700">
+                    Total Horas Item 3: {plantoesFiltrados
+                    .reduce((acc, p) => acc + Number(p.horas_item_3), 0)
+                    .toFixed(2)}
+                </div>
+            )}
+
+            {/* Valor total */}
+            {plantoesFiltrados.length > 0 && (
+                <div className="text-lg font-bold text-pink-700">
+                    Total Horas Item 4: {plantoesFiltrados
+                    .reduce((acc, p) => acc + Number(p.horas_item_4), 0)
+                    .toFixed(2)}
+                </div>
+            )}
+        </div>
+
         <ul className="space-y-2">
             {plantoesPaginaAtual.map((p) => {
-                const dataBr = new Date(p.data).toLocaleDateString("pt-BR");
+                const dataBr = p.data.split("-").reverse().join("/");
                 const horaInicio = p.hora_inicio.slice(0, 5);
                 const horaFim = p.hora_fim.slice(0, 5);
 
                 return (
                 <li key={p.id} className="bg-white p-3 rounded-lg shadow flex justify-between">
-                    <div>
                     <div className="font-semibold text-pink-700">{p.nome_medico}</div>
                     <div className="flex gap-4 text-sm text-gray-600">
                         <div>{dataBr}</div>
                         <div>{horaInicio} - {horaFim}</div>
                     </div>
-                    </div>
+                    <div className="font-semibold text-pink-700">Horas item 1: {p.horas_item_1}</div>
+                    <div className="font-semibold text-pink-700">Horas item 2: {p.horas_item_2}</div>
+                    <div className="font-semibold text-pink-700">Horas item 3: {p.horas_item_3}</div>
+                    <div className="font-semibold text-pink-700">Horas item 4: {p.horas_item_4}</div>
                     <div className="font-bold text-pink-600">R$ {p.custo_total}</div>
                 </li>
                 );
